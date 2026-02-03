@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Account1",
+    "token": "INITIAL_BEARER_TOKEN1",
+    "refresh_token": "REFRESH_TOKEN_HERE1",
+    "privy_ca_id": "ID-LAIN-UNTUK-AKUN-1",
+    "proxy": ""
+  },
+  {
+    "name": "Account2",
+    "token": "INITIAL_BEARER_TOKEN2",
+    "refresh_token": "REFRESH_TOKEN_HERE2",
+    "privy_ca_id": "ID-LAIN-UNTUK-AKUN-2",
+    "proxy": ""
+  }
+]

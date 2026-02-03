@@ -1,0 +1,48 @@
+{
+  "baseUrl": "https://circlpay.app/backend/api",
+  "walletUrl": "https://wallet.circlpay.app",
+  "privyAppId": "cmk8pawbj014rl10cyz2ook41",
+  "endpoints": {
+    "balances": "/user/balances",
+    "profile": "/user/profile",
+    "send": "/send",
+    "syncAllChain": "/balances/syncallchain",
+    "transactions": "/user/transactions",
+    "tasks": "/tasks"
+  },
+  "txSettings": {
+    "blockchain_id": 4,
+    "is_native": true,
+    "token_address": null,
+    "amount": "0.000001",
+    "recipient": [
+      "0x8581e167ebd2eD4eaD567BE553C69ded535cb817",
+      "0x69D1f94Dc8fBDEE4A0C7bf9d7944792c1E9ea949",
+      "0xe9886f6a2f6AA049806100e480F27B12AE68F14f",
+      "0x45f947276Ac50BDDfD45F2b68b31718db03D7922",
+      "0x0a2d0B1495B62AF3a907815ef674047D7457db2D",
+      "0x241e1a6F26CD122d850704F3965d3B56cE47C8b7",
+      "0x3aD08dB11A703383A370Eb4BB40b74Cf17AB614c",
+      "0x594F2405E11ee0eF7D3856Be33351C32461AF9E4",
+      "0xf4B213EC1400eba172844Ad3E32390Bff62189e3",
+      "0x64785Be661B4B412B3a8EE7913f4e03da6Dd8Fca"
+    ]
+  },
+  "delays": {
+    "minDelayBetweenTx": 30000,
+    "maxDelayBetweenTx": 60000,
+    "minDelayBetweenAccounts": 5000,
+    "maxDelayBetweenAccounts": 15000,
+    "cycleCooldown": 300000
+  },
+  "smartLogic": {
+    "targetPoints": 20,
+    "txBatchSize": 5
+  },
+  "settings": {
+    "enableDummyTraffic": true,
+    "enableRandomOrder": true,
+    "enableProxy": true,
+    "ignoreLowBalance": true
+  }
+}
