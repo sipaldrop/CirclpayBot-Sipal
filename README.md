@@ -63,28 +63,38 @@ Kamu perlu membuat file untuk menyimpan data akunmu.
 4.  Isi data akunmu seperti format di bawah ini:
 
 ```json
-[
-  {
-    "name": "Account1",
-    "token": "INITIAL_BEARER_TOKEN1",
-    "refresh_token": "REFRESH_TOKEN_HERE1",
-    "privy_ca_id": "ID-LAIN-UNTUK-AKUN-1",
-    "proxy": ""
+{
+  "masterWallet": {
+    "privateKey": "PRIVATE_KEY_MASTER_WALLET_UNTUK_AUTO_REFILL"
   },
-  {
-    "name": "Account2",
-    "token": "INITIAL_BEARER_TOKEN2",
-    "refresh_token": "REFRESH_TOKEN_HERE2",
-    "privy_ca_id": "ID-LAIN-UNTUK-AKUN-2",
-    "proxy": ""
-  }
-]
+  "accounts": [
+    {
+      "name": "Account1",
+      "token": "INITIAL_BEARER_TOKEN1",
+      "refresh_token": "REFRESH_TOKEN_HERE1",
+      "privy_ca_id": "ID-LAIN-UNTUK-AKUN-1",
+      "proxy": ""
+    },
+    {
+      "name": "Account2",
+      "token": "INITIAL_BEARER_TOKEN2",
+      "refresh_token": "REFRESH_TOKEN_HERE2",
+      "privy_ca_id": "ID-LAIN-UNTUK-AKUN-2",
+      "proxy": ""
+    }
+  ]
+}
 ```
 > **Catatan Penting:**
-> - `token`: Bearer token awal (boleh expired). **WAJIB** ada untuk tanda tangan request.
-> - `refresh_token`: Token panjang (30 hari). Bot akan pakai ini untuk **Auto-Refresh** access token.
-> - **Kamu TIDAK PERLU update manual setiap jam.** Bot yang akan urus renew token sendiri! 🤖
+> - `masterWallet`: (Opsional) Isi private key wallet utama yang ada saldo MATIC-nya. Jika akun kehabisan MATIC (< 0.2), bot otomatis transfer dari sini! 💰
+> - `token`: Bearer token awal.
+> - `refresh_token`: Token panjang (30 hari) untuk Auto-Refresh.
 > - `proxy`: (Opsional) Format http/socks.
+
+### 2. Fitur Auto-Save & Daily Limit
+- **wallet_db.json**: File ini otomatis dibuat bot untuk mencatat akun yang "DONE" hari ini.
+- **Auto-Skip**: Jika akun sudah mentok poinnya hari ini, besok run bot akan otomatis skip akun tersebut (sampai ganti hari). Hemat proxy!
+- **Safe Save**: Edit `accounts.json` manual saat bot jalan? Aman! Bot sekarang pintar mendeteksi perubahan manual.
 
 ### 2. Pengaturan Umum (`config.json`)
 File `config.json` sudah diatur otomatis. Kamu dapat mengubah `txSettings` untuk mengatur jumlah dan tujuan transfer.

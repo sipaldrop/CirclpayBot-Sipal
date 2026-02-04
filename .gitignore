@@ -6,3 +6,4 @@ tokens.json
 database.json
 session/
 *.log
+wallet_db.json
